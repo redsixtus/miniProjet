@@ -1,8 +1,11 @@
-console.log('** Administration Collegues **');
+
 
 import{Presentation} from "./presentation";
+import {Service} from "./service";
 
-const presentation = new Presentation();
+console.log('** Administration Collegues **');
+const service = new Service();
+const presentation = new Presentation(service);
 
 presentation.demarrer()
 

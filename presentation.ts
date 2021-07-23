@@ -1,6 +1,18 @@
 import {Service} from "./service";
+import {create} from "domain";
 
+import * as readline from "readline";
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+
+});
 export class Presentation {
+
+    constructor(private service: Service) {
+
+    }
 
 
     demarrer() {
@@ -8,17 +20,12 @@ export class Presentation {
         console.log("99. Sortie")
         let list =new Service();
         let choisimoi: string="";
-        const readline = require('readline');
 
-        const rl = readline.createInterface({
-            input: process.stdin,
-            output: process.stdout
 
-        });
-        console.log("1. Lister les collegues ou 99. Sortie  ");
+        console.log("1. menu ou 99. Sortie  ");
         rl.question("",( input : string)=>{
         choisimoi=input;
-        rl.close();
+
         switch (choisimoi){
             case"1":
                 console.log("Liste des collegues");
@@ -31,16 +38,16 @@ export class Presentation {
                 });
                 break;
             case"2":
-                console.log("Creer un collegue");
-                this.demarrer();
-                list.listCo().then(listCo =>{
-                    for (const col of listCo ){
-                        console.log(col.nom)
-                        console.log(col.prenom)
-                    }
-                });
+                rl.question("Entre nom de votre collegue : ", (nom:string)=>{
+                    rl.question("Entre le prenom : ",async (prenom: string) => {
+                        const collegue = await this.service.create({nom,prenom})
+                        this.demarrer();
+                    })
+
+                })
                 break;
             case "99":
+                rl.close();
                 console.log("Au Revoir A la Giscard");
                 break;
             default:

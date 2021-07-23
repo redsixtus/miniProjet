@@ -11,4 +11,12 @@ export class Service{
 
         return body;
     }
+    async create(collegue: Partial <Collegue>){
+        const response= await fetch('https://c1.cleverapps.io/collegues',{
+            method:'post',
+            body: JSON.stringify(collegue),
+            headers:{'Content-Type':'application/json'}
+        });
+        return response.json();
+    }
 }

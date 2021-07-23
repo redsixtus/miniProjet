@@ -60,6 +60,23 @@ var Service = /** @class */ (function () {
             });
         });
     };
+    Service.prototype.create = function (collegue) {
+        return __awaiter(this, void 0, void 0, function () {
+            var response;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, node_fetch_1.default('https://c1.cleverapps.io/collegues', {
+                            method: 'post',
+                            body: JSON.stringify(collegue),
+                            headers: { 'Content-Type': 'application/json' }
+                        })];
+                    case 1:
+                        response = _a.sent();
+                        return [2 /*return*/, response.json()];
+                }
+            });
+        });
+    };
     return Service;
 }());
 exports.Service = Service;
