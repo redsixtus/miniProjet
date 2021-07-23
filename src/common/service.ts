@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 import {promises} from "dns";
-import {Collegue} from "./models";
+import {Collegue} from "../../models";
 
 export class Service{
 

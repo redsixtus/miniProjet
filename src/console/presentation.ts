@@ -1,4 +1,4 @@
-import {Service} from "./service";
+import {Service} from "../common/service";
 import {create} from "domain";
 
 import * as readline from "readline";

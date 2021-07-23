@@ -56,7 +56,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Presentation = void 0;
-var service_1 = require("./service");
+var service_1 = require("./src/common/service");
 var readline = __importStar(require("readline"));
 var rl = readline.createInterface({
     input: process.stdin,
