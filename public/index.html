@@ -14,6 +14,19 @@ scale=1.0, minimum-scale=1.0">
 <h1>Application Collègue</h1>
 <input type="button" value="Afficher liste">
 <p></p>
+<form action="/ma-page-de-traitement" method="post">
+    <div>
+        <label for="name">Nom :</label>
+        <input type="text" id="name" name="user_name">
+    </div>
+    <div>
+        <label for="lastname">Prenom :</label>
+        <input type="email" id="lastname" name="last_name">
+    </div>
+    <div class="button">
+        <button type="submit">Envoyer le message</button>
+    </div>
+</form>
 <script src="main.js"></script>
 
 </body>

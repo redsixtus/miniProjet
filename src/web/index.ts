@@ -2,6 +2,7 @@ import {Service} from "../common/service";
 
 let btn= document.querySelector('input');
 let txt= document.querySelector('p');
+let btnsub= document.querySelector('button')
 
 btn?.addEventListener('click',()=> {
     new Service().listCo().then(listCo => {
@@ -13,3 +14,4 @@ btn?.addEventListener('click',()=> {
     })
 
 })
+
